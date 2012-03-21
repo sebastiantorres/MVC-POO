@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+	background: silver;
+	font-family: arial;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 0;
+	padding-bottom:0;
+}
+menu ul li {
+	float: left;
+	text-decoration:none;
+}
