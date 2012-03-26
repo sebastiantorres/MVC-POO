@@ -2,7 +2,7 @@
 class Request
 {
 	
-	private $_controlado;
+	private $_controlador;
 	private $_metodo;
 	private $_argumentos;
 
