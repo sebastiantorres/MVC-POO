@@ -10,6 +10,17 @@ class postModel extends Model
 		$post = $this->_db->query("select * from post");
 		return $post->fetchall();
 	}
+
+	public function insertarPost($titulo, $cuerpo)
+	{
+		$this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)")
+		->execute(
+				array(
+					':titulo' => $titulo,
+					':cuerpo' => $cuerpo
+					)
+			);
+	}
 	
 }
 ?>

@@ -16,9 +16,9 @@ class View
 					'enlace' => BASE_URL,
 					),
 				array(
-					'id' => 'item2',
-					'titulo' => 'item2',
-					'enlace' => BASE_URL,
+					'id' => 'post',
+					'titulo' => 'post',
+					'enlace' => BASE_URL . 'post',
 					),	
 		);
 		$_layoutParams 	= array(

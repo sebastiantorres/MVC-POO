@@ -1,0 +1,15 @@
+<h2>Ultimos Posts</h2>
+<?php if(isset($this->posts) && count($this->posts)): ?>
+<table>
+	<?php for ($i=0; $i < count($this->posts) ; $i++): ?>
+	<tr>
+		<td><?php echo $this->posts[$i]['id']; ?></td>
+		<td><?php echo $this->posts[$i]['titulo']; ?></td>
+		<td><?php echo $this->posts[$i]['comentario']; ?></td>
+	</tr>
+	<?php endfor; ?>
+</table>
+<?php else: ?>
+<p><strong>No hay posts!!!</strong></p>
+<?php endif; ?>
+<p><a href="<?php BASE_URL; ?>post/nuevo">Agregar Post</a></p>
