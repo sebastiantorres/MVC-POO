@@ -10,6 +10,7 @@ require_once APP_PATHS.'Controller.php';
 require_once APP_PATHS.'Model.php';
 require_once APP_PATHS.'View.php';
 require_once APP_PATHS.'Registro.php';
+require_once APP_PATHS.'Database.php';
 try{
 	Bootstrap::run(new Request);
 }

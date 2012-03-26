@@ -1,1 +1,14 @@
 <h2>Vista Index...</h2>
+<?php if(isset($this->posts) && count($this->posts)): ?>
+<table>
+	<?php for ($i=0; $i < count($this->posts) ; $i++): ?>
+	<tr>
+		<td><?php echo $this->posts[$i]['id']; ?></td>
+		<td><?php echo $this->posts[$i]['titulo']; ?></td>
+		<td><?php echo $this->posts[$i]['comentario']; ?></td>
+	</tr>
+	<?php endfor; ?>
+</table>
+<?php else: ?>
+<p><strong>No hay posts!!!</strong></p>
+<?php endif; ?>
