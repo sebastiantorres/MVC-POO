@@ -13,7 +13,7 @@ class postModel extends Model
 
 	public function insertarPost($titulo, $cuerpo)
 	{
-		$this->_db->prepare("INSERT INTO posts VALUES (null, :titulo, :cuerpo)")
+		$this->_db->prepare("INSERT INTO post VALUES (null, :titulo, :cuerpo)")
 		->execute(
 				array(
 					':titulo' => $titulo,

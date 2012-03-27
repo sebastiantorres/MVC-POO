@@ -15,7 +15,7 @@ abstract class Controller
 		$rutaModelo = ROOT . 'models' . DS . $modelo . '.php';
 		
 		if(is_readable($rutaModelo)){
-			require_once $rutaModelo;
+			require_once $rutaModelo;	
 			$modelo = new $modelo;
 			return $modelo;
 		}
@@ -46,6 +46,26 @@ abstract class Controller
 
 		return '';
 	}
-}
 
+	protected function getInt($clave){
+		if(isset($_POST[$clave]) && !empty($_POST[$clave])){
+			$_POST[$clave] = filter_input(INPUT_POST, $clave , FILTER_VALIDATE_INT);
+			return $_POST[$clave];
+		}
+
+		return 0;
+	}
+
+	protected function redireccionar($ruta = false )
+	{
+		if($ruta){
+			header('location:' . BASE_URL . $ruta );
+			exit;
+		} else {
+			header('location:' . BASE_URL);
+			exit;
+		}
+
+	}
+}
 ?>

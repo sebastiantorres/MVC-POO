@@ -2,9 +2,11 @@
 <p>
 	
 </p>
-<form  id="form1" metodo="post" action="<?php echo BASE_URL; ?>post/nuevo">
+<form  id="form1" method="post" action="<?php echo BASE_URL; ?>post/nuevo">
 	<input type="hidden" name="guardar" value="1"/>
 	<p>Titulo:<br />
 	<input type="texto" name="titulo" /></p>
-	<input type="submit" class="button" value="Guardar">
+	<p>Contenido:<br />
+	<textarea name="contenido"></textarea></p>
+	<p><input type="submit" class="button" value="Guardar"></p>
 </form>

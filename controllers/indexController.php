@@ -11,7 +11,7 @@ class indexController extends Controller
 		$post = $this->loadModel('post');
 		$this->_view->posts=  $post->getPosts();
 		$this->_view->titulo = 'Portada';
-		$this->_view->renderizar('index');
+		$this->_view->renderizar('index','inicio');
 	}
 }
 ?>
