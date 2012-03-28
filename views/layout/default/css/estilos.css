@@ -7,6 +7,17 @@ body {
 	padding-top: 0;
 	padding-bottom:0;
 }
+
+table {
+	
+	margin: 0;
+	border-collapse:collapse;
+
+}
+
+table td{
+	border: 1px #666  solid;
+}
 menu ul li {
 	float: left;
 	text-decoration:none;

@@ -1,11 +1,13 @@
 <h2>Ultimos Posts</h2>
 <?php if(isset($this->posts) && count($this->posts)): ?>
-<table>
+<table  >
 	<?php for ($i=0; $i < count($this->posts) ; $i++): ?>
 	<tr>
 		<td><?php echo $this->posts[$i]['id']; ?></td>
 		<td><?php echo $this->posts[$i]['titulo']; ?></td>
 		<td><?php echo $this->posts[$i]['comentario']; ?></td>
+		<td><a href="<?php echo BASE_URL . 'post/editar' . DS . $this->posts[$i]['id'] ?>">Editar</a></td>
+		<td><a href="<?php echo BASE_URL . 'post/eliminar' . DS . $this->posts[$i]['id'] ?>">Eliminar</a></td>
 	</tr>
 	<?php endfor; ?>
 </table>

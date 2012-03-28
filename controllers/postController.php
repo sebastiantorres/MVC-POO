@@ -39,13 +39,70 @@ class postController extends Controller
 			}
 
 			$this->_post->insertarPost(
-				$this->getTexto('titulo'),
-				$this->getTexto('contenido')
+				$this->getPostParam('titulo'),
+				$this->getPostParam('contenido')
 
 			);
 			$this->redireccionar('post');
 		}					
 		$this->_view->renderizar('nuevo','post');
+
+	}
+
+	public function editar($id)
+	{
+		if(!$this->filtrarInt($id)){
+			$this->redireccionar('post');
+		}
+
+		if(!$this->_post->getPost($this->filtrarInt($id))){
+			$this->redireccionar('post');
+		}
+
+		$this->_view->titulo = "Editar Post";
+		$this->_view->setJs(array('nuevo'));
+
+		if($this->getInt('guardar') == 1) {
+
+			$this->_view->datos = $_POST;
+			if(!$this->getTexto('titulo')){
+				$this->_view->_error = 'Debe introducir el titulo del post';
+				$this->_view->renderizar('editar','post');
+				exit;
+
+			}
+
+			if(!$this->getTexto('contenido')){
+				$this->_view->_error = 'Debe introducir el contenido del post';
+				$this->_view->renderizar('editar','post');
+				exit;
+
+			}
+
+			$this->_post->editarPost(
+				$this->filtrarInt($id),
+				$this->getTexto('titulo'),
+				$this->getTexto('contenido')
+
+			);
+			$this->redireccionar('post');
+		}		
+
+			$this->_view->datos = $this->_post->getPost($this->filtrarInt($id));
+			$this->_view->renderizar('editar','post');
+	}
+
+	public function eliminar($id)
+	{
+		if(!$this->filtrarInt($id)){
+			$this->redireccionar('post');
+		}
+
+		if(!$this->_post->getPost($this->filtrarInt($id))){
+			$this->redireccionar('post');
+		}
+		$this->_post->eliminarPost($this->filtrarInt($id))	;
+		$this->redireccionar('post');
 
 	}
 }
