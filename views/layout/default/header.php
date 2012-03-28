@@ -3,6 +3,15 @@
 	<title><?php if(isset($this->titulo)) echo $this->titulo;?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
 	<link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'] ;?>estilos.css" type="text/css">
+	<script  src="<?php echo BASE_URL; ?>public/js/jquery.js" type="text/javascript"></script>
+	<script  src="<?php echo BASE_URL; ?>public/js/jquery.validate.js" type="text/javascript"></script>
+
+	<?php if(isset($_layoutParams['js']) && count($_layoutParams['js'])): ?>
+
+		<?php for ($i=0; $i < count($_layoutParams['js']); $i++) : ?>
+		<script  src="<?php echo $_layoutParams['js'][$i] ?>" type="text/javascript"></script>
+	<?php endfor; ?>
+	<?php endif; ?>
 </head>
 <body>
 	<div id="main">
